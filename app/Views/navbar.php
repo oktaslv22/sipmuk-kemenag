@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    <link href="style.css" rel="stylesheet">
 </head>
 <title>SIPMUK KEMENAG LAMPUNG</title>
 </head>
@@ -49,7 +49,7 @@ body {
                             <b>KEGIATAN</b>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="#">Pelatihan EMIS</a></li>
+                            <li><a class="dropdown-item" href="<?= site_url('/kegiatan1') ?>">Pelatihan EMIS</a></li>
                             <li><a class="dropdown-item" href="#">Workshop Halaqoh</a></li>
                             <li><a class="dropdown-item" href="#">Sosialisasi BIMTEK</a></li>
                         </ul>

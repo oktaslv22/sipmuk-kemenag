@@ -55,15 +55,13 @@ $user_password = [
                     <h1 class=" mt-5 mb-3 ">
                         <center>LOGIN</center>
                     </h1>
-                    <?= form_open('Auth/login') ?>
                     <div class="col-md-10 mt-10 offset-xl-1">
-                        <form method="POST" action=" ">
-                            <?php if (session()->getFlashdata('error')) { ?>
-                            <div class="alert alert-danger">
-                                <?php echo session()->getFlashdata('error') ?>
-                            </div>
-                            <?php } ?>
-
+                        <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <?php echo session()->getFlashdata('error'); ?>
+                        </div>
+                        <?php endif; ?>
+                        <form method="post" action="<?= base_url('/login/process'); ?>">
                             <!-- Username input -->
                             <div class="form-outline mb-2">
                                 <label class="form-label" for="user_name">Username</label>
@@ -95,7 +93,6 @@ $user_password = [
 
                             </div>
 
-                            <?= form_close() ?>
 
                             <!-- Submit button -->
 

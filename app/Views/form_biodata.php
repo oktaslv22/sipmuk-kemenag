@@ -197,7 +197,7 @@ body {
                 </div>
 
                 <center>
-                    <button type="submit" name="submit" href="<?= base_url('/') ?>;"
+                    <button type="submit" name="submit" href="<?= base_url('#') ?>;"
                         class="btn btn-success">Submit</button>
                     <button type="cancel" name="cancel" class="btn btn-danger">Cancel</button>
                 </center>

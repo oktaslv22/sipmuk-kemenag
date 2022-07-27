@@ -69,9 +69,15 @@ $errors = $session->getFlashdata('errors');
                         <p class="mb-0">
                         </p>
                     </div> -->
-                    <?= form_open('Auth/register') ?>
-                    <div class="col-md-10 mt-10 offset-xl-1">
-                        <form method="POST" action=" ">
+                    <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <h4>Periksa Entrian Form</h4>
+                        </hr />
+                        <?php echo session()->getFlashdata('error'); ?>
+                    </div>
+                    <?php endif; ?>
+                    <form method="POST" action="<?= base_url('/register/process') ?>">
+                        <div class="col-md-10 mt-10 offset-xl-1">
                             <!-- Email input -->
                             <div class="form-outline mb-2">
                                 <label class="form-label" for="user_email">Email</label>
@@ -104,9 +110,6 @@ $errors = $session->getFlashdata('errors');
                                     <a href="<?= site_url('/') ?>">Home</a>
                                 </p>
                             </div>
-                            <?= form_close() ?>
-
-
 
                             <!-- Submit button -->
 
@@ -123,10 +126,10 @@ $errors = $session->getFlashdata('errors');
                                 role="button">
                                 <i class="fab fa-twitter me-2"></i>Continue with Twitter</a> -->
 
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 

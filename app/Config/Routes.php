@@ -36,12 +36,16 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/login', 'Auth::login');
-$routes->get('/register', 'Auth::register');
+$routes->get('/login', 'Login::index');
+$routes->get('/login/process', 'Login::process');
+$routes->get('/logout', 'Login::logout');
+$routes->get('/register', 'Register::index');
+$routes->get('/register/process', 'Register::process');
 $routes->get('/kontak', 'Home::kontak');
 $routes->get('/dashboard', 'Biodata::index');
 $routes->get('/formbiodata', 'Biodata::create');
 $routes->get('/biodata/store', 'Biodata::store');
+$routes->get('/kegiatan1', 'Home::kegiatan1');
 
 /*
  * --------------------------------------------------------------------

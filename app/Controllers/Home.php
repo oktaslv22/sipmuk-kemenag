@@ -19,8 +19,8 @@ class Home extends BaseController
         //
     }
 
-    // public function biodata()
-    // {
-    //     return view('form_biodata');
-    // }
+    public function kegiatan1()
+    {
+        return view('kegiatan1');
+    }
 }

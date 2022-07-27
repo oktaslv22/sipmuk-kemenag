@@ -16,169 +16,9 @@
     <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-    <style>
-    .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-    }
-
-    @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-        }
-    }
-
-    .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-    }
-
-    .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-    }
-
-    .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-    }
-
-    .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-    }
-
-    .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    body {
-        font-size: .875rem;
-    }
-
-    .feather {
-        width: 16px;
-        height: 16px;
-    }
-
-    /*
- * Sidebar
- */
-
-    .sidebar {
-        position: fixed;
-        top: 0;
-        /* rtl:raw:
-  right: 0;
-  */
-        bottom: 0;
-        /* rtl:remove */
-        left: 0;
-        z-index: 100;
-        /* Behind the navbar */
-        padding: 48px 0 0;
-        /* Height of navbar */
-        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    }
-
-    @media (max-width: 767.98px) {
-        .sidebar {
-            top: 5rem;
-        }
-    }
-
-    .sidebar-sticky {
-        height: calc(100vh - 48px);
-        overflow-x: hidden;
-        overflow-y: auto;
-        /* Scrollable contents if viewport is shorter than content. */
-    }
-
-    .sidebar .nav-link {
-        font-weight: 500;
-        color: #333;
-    }
-
-    .sidebar .nav-link .feather {
-        margin-right: 4px;
-        color: #727272;
-    }
-
-    .sidebar .nav-link.active {
-        color: #2470dc;
-    }
-
-    .sidebar .nav-link:hover .feather,
-    .sidebar .nav-link.active .feather {
-        color: inherit;
-    }
-
-    .sidebar-heading {
-        font-size: .75rem;
-    }
-
-    /*
- * Navbar
- */
-
-    .navbar-brand {
-        padding-top: .75rem;
-        padding-bottom: .75rem;
-        background-color: rgba(0, 0, 0, .25);
-        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
-    }
-
-    .navbar .navbar-toggler {
-        top: .25rem;
-        right: 1rem;
-    }
-
-    .navbar .form-control {
-        padding: .75rem 1rem;
-    }
-
-    .form-control-dark {
-        color: #fff;
-        background-color: rgba(255, 255, 255, .1);
-        border-color: rgba(255, 255, 255, .1);
-    }
-
-    .form-control-dark:focus {
-        border-color: transparent;
-        box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
-    }
-
-    @media print {
-
-        .position-sticky,
-        .sticky-top,
-        .btn-toolbar,
-        .navbar-toggler-icon,
-        th:nth-child(17) {
-            display: none;
-        }
-    }
-    </style>
-
-
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -205,94 +45,191 @@
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
+                    <div class="nav flex-column">
+                        <div class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">
-                                <span class="fa fa-home" class="align-text-bottom"></span> Dashboard</a>
-                        </li>
-                        <li class="nav-item">
+                                <span class="fa fa-dashboard" class="align-text-bottom"></span> Dashboard</a>
+                        </div>
+                        <div class="dropdown">
+                            <span class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                Kegiatan
+                            </span>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Pelatihan Emis</a></li>
+                                <li><a class="dropdown-item" href="#">Workshop Halawqoh</a></li>
+                                <li><a class="dropdown-item" href="#">Sosialisasi Bimtek</a></li>
+                        </div>
+                    </div>
+                    <!-- <li class="nav-item">
                             <a class="nav-link dropdown-toggle" href="#">
                                 <span class="span" class="dropdown-menu"></span>
                                 Kegiatan
-                            </a>
-                        </li>
-                    </ul>
+                                <select name="kegiatan" id="kegiatan">
+                                    <option value="pelatihan emis">Pelatihan Emis</option>
+                                    <option value="workshop halaqoh">Workshop Halawqoh</option>
+                                    <option value="sosialisasi bimtek">Sosialisasi Bimtek</option>
+                                </select> -->
 
                 </div>
             </nav>
+        </div>
 
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="fa fa-home"></h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button onclick="window.print()" type="button"
-                                class="btn btn-sm btn-outline-secondary">Download <i class="fa fa-print"></i></button>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="fa fa-dashboard"></h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group me-2">
+                        <button onclick="window.print()" type="button" class="btn btn-sm btn-outline-secondary">Download
+                            <i class="fa fa-print"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Content Row -->
+            <div class="row">
+
+                <!-- Kegiatan 1 Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Kegiatan 1</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fa fa-users fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <h5>Bidang PAPKI</h5>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead class="table-secondary">
-                            <tr>
-                                <th scope="col">No.</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">NIP</th>
-                                <th scope="col">Tempat Lahir</th>
-                                <th scope="col">Tgl Lahir</th>
-                                <th scope="col">Tempat Tugas</th>
-                                <th scope="col">Jabatan</th>
-                                <th scope="col">NPWP</th>
-                                <th scope="col">Nama Rekening</th>
-                                <th scope="col">Nomor Rekening</th>
-                                <th scope="col">Nama Bank</th>
-                                <th scope="col">Tempat Tinggal</th>
-                                <th scope="col">Kab/Kota</th>
-                                <th scope="col">Alamat Rumah</th>
-                                <th scope="col">Alamat Kantor</th>
-                                <th scope="col">Telp</th>
-                                <th scope="col">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $no = 1;
-                            foreach ($biodata as $row) {
-                            ?>
-                            <tr>
-                                <td><?= $no++; ?></td>
-                                <td><?= $row->nama; ?></td>
-                                <td><?= $row->nip; ?></td>
-                                <td><?= $row->tmpt_lahir; ?></td>
-                                <td><?= $row->tgl_lahir; ?></td>
-                                <td><?= $row->tempat_tugas; ?></td>
-                                <td><?= $row->jabatan; ?></td>
-                                <td><?= $row->npwp; ?></td>
-                                <td><?= $row->nama_rek; ?></td>
-                                <td><?= $row->nomor_rek; ?></td>
-                                <td><?= $row->nama_bank; ?></td>
-                                <td><?= $row->tempat_tinggal; ?></td>
-                                <td><?= $row->kab_kota; ?></td>
-                                <td><?= $row->alamat_rumah; ?></td>
-                                <td><?= $row->alamat_kantor; ?></td>
-                                <td><?= $row->telp; ?></td>
-                                <td>
-                                    <i class="btn btn-warning fa fa-print" href="<?= base_url("#"); ?> "></i>
-                                    <i class="btn btn-danger fa fa-trash"
-                                        href="<?= base_url("biodata/delete/$row->id_biodata"); ?> "
-                                        onclick="return confirm('Apakah yakin ingin menghapus data?')"></i>
-                                </td>
-                            </tr>
-                            <?php
-                            } ?>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                <!-- Kegiatan 2 Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Kegiatan 2</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fa fa-users fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </main>
-        </div>
+
+                <!-- Kegiatan 3 Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-info shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Kegiatan 3
+                                    </div>
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-auto">
+                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fa fa-users fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kegiatan 4 Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-warning shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        Kegiatan 4</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fa fa-users fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ngambil dr kegiatan di home.php -->
+            <h5>Kegiatan 1</h5>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">NIP</th>
+                            <th scope="col">Tempat Lahir</th>
+                            <th scope="col">Tgl Lahir</th>
+                            <th scope="col">Tempat Tugas</th>
+                            <th scope="col">Jabatan</th>
+                            <th scope="col">NPWP</th>
+                            <th scope="col">Nama Rekening</th>
+                            <th scope="col">Nomor Rekening</th>
+                            <th scope="col">Nama Bank</th>
+                            <th scope="col">Tempat Tinggal</th>
+                            <th scope="col">Kab/Kota</th>
+                            <th scope="col">Alamat Rumah</th>
+                            <th scope="col">Alamat Kantor</th>
+                            <th scope="col">Telp</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $no = 1;
+                        foreach ($biodata as $row) {
+                        ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $row->nama; ?></td>
+                            <td><?= $row->nip; ?></td>
+                            <td><?= $row->tmpt_lahir; ?></td>
+                            <td><?= $row->tgl_lahir; ?></td>
+                            <td><?= $row->tempat_tugas; ?></td>
+                            <td><?= $row->jabatan; ?></td>
+                            <td><?= $row->npwp; ?></td>
+                            <td><?= $row->nama_rek; ?></td>
+                            <td><?= $row->nomor_rek; ?></td>
+                            <td><?= $row->nama_bank; ?></td>
+                            <td><?= $row->tempat_tinggal; ?></td>
+                            <td><?= $row->kab_kota; ?></td>
+                            <td><?= $row->alamat_rumah; ?></td>
+                            <td><?= $row->alamat_kantor; ?></td>
+                            <td><?= $row->telp; ?></td>
+                            <td>
+                                <i class="btn btn-warning fa fa-print" href="<?= base_url("#"); ?> "></i>
+                                <i class="btn btn-danger fa fa-trash"
+                                    href="<?= base_url("biodata/delete/$row->id_biodata"); ?> "
+                                    onclick="return confirm('Apakah yakin ingin menghapus data?')"></i>
+                            </td>
+                        </tr>
+                        <?php
+                        } ?>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
     </div>
 
 
