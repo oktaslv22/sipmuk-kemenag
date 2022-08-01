@@ -11,7 +11,7 @@
 <style>
 .box {
     width: 332px;
-    height: 474px;
+    height: auto;
     background: #549b3f;
     border: 1px solid #000000;
 }
@@ -62,17 +62,10 @@ $errors = $session->getFlashdata('errors');
                     <h1 class=" mt-5 mb-3 ">
                         <center>REGISTER</center>
                     </h1>
-                    <!-- 
-                    <div class="alert aleer -danger" role="alert">
-                        <h4 class="alert-heading">Terjai Kesalahan</h4>
-                        <hr>
-                        <p class="mb-0">
-                        </p>
-                    </div> -->
+
                     <?php if (!empty(session()->getFlashdata('error'))) : ?>
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <h4>Periksa Entrian Form</h4>
-                        </hr />
+                        <h5>Periksa Entrian Form</h5>
                         <?php echo session()->getFlashdata('error'); ?>
                     </div>
                     <?php endif; ?>
@@ -110,22 +103,6 @@ $errors = $session->getFlashdata('errors');
                                     <a href="<?= site_url('/') ?>">Home</a>
                                 </p>
                             </div>
-
-                            <!-- Submit button -->
-
-
-                            <!-- <div class="divider d-flex align-items-center my-4">
-                                <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
-                            </div>
-
-                            <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
-                                role="button">
-                                <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
-                            </a>
-                            <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
-                                role="button">
-                                <i class="fab fa-twitter me-2"></i>Continue with Twitter</a> -->
-
                     </form>
                 </div>
             </div>

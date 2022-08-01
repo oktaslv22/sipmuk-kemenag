@@ -48,11 +48,10 @@ include 'navbar.php'
                                 dy=".3em">140x140</text>
                         </svg>
 
-                        <h2 class="fw-normal">Heading</h2>
-                        <p>Some representative placeholder content for the three columns of text below the carousel.
-                            This is
-                            the first column.</p>
-                        <p><a class="btn btn-secondary" href="#">Selengkapnya &raquo;</a></p>
+                        <h2 class="fw-normal">Pelatihan EMIS</h2>
+                        <p>Pengertian kegiatan ........ </p>
+                        <p><a class="btn btn-secondary" href="<?= base_url('/kegiatan1') ?>">Selengkapnya &raquo;</a>
+                        </p>
                     </div><!-- /.col-lg-4 -->
 
                     <div class="col-lg-4">
@@ -64,10 +63,10 @@ include 'navbar.php'
                                 dy=".3em">140x140</text>
                         </svg>
 
-                        <h2 class="fw-normal">Heading</h2>
-                        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the
-                            second column.</p>
-                        <p><a class="btn btn-secondary" href="#">Selengkapnya &raquo;</a></p>
+                        <h2 class="fw-normal">Workshop Halaqoh</h2>
+                        <p>Pengertian kegiatan ........ </p>
+                        <p><a class="btn btn-secondary" href="<?= base_url('/kegiatan2') ?>">Selengkapnya &raquo;</a>
+                        </p>
                     </div><!-- /.col-lg-4 -->
 
                     <div class="col-lg-4">
@@ -79,11 +78,10 @@ include 'navbar.php'
                                 dy=".3em">140x140</text>
                         </svg>
 
-                        <h2 class="fw-normal">Heading</h2>
-                        <p>And lastly this, the third column of representative placeholder content. Create the good
-                            content in this is Third
-                            Coloumn</p>
-                        <p><a class="btn btn-secondary" href="#">Selengkapnya &raquo;</a></p>
+                        <h2 class="fw-normal">Sosialisasi BIMTEK</h2>
+                        <p>Pengertian kegiatan ........ </p>
+                        <p><a class="btn btn-secondary" href="<?= base_url('/kegiatan3') ?>">Selengkapnya &raquo;</a>
+                        </p>
                     </div><!-- /.col-lg-4 -->
             </center>
         </div><!-- /.row -->

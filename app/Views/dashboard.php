@@ -91,14 +91,14 @@
             <!-- Content Row -->
             <div class="row">
 
-                <!-- Kegiatan 1 Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4">
+                <!-- Pelatihan EMIS Card Example -->
+                <div class="col-xl-4 col-md-6 mb-4">
                     <div class="card border-left-primary shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                        Kegiatan 1</div>
+                                        Pelatihan EMIS</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
                                 </div>
                                 <div class="col-auto">
@@ -109,14 +109,14 @@
                     </div>
                 </div>
 
-                <!-- Kegiatan 2 Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4">
+                <!-- Workshop Halaqoh Card Example -->
+                <div class="col-xl-4 col-md-6 mb-4">
                     <div class="card border-left-success shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                        Kegiatan 2</div>
+                                        Workshop Halaqoh</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                                 </div>
                                 <div class="col-auto">
@@ -127,13 +127,14 @@
                     </div>
                 </div>
 
-                <!-- Kegiatan 3 Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4">
+                <!-- Sosialisasi BIMTEK Card Example -->
+                <div class="col-xl-4 col-md-6 mb-4">
                     <div class="card border-left-info shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Kegiatan 3
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Sosialisasi
+                                        BIMTEK
                                     </div>
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-auto">
@@ -150,7 +151,7 @@
                 </div>
 
                 <!-- Kegiatan 4 Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4">
+                <!-- <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-warning shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
@@ -165,11 +166,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <!-- ngambil dr kegiatan di home.php -->
-            <h5>Kegiatan 1</h5>
+            <h5>Pelatihan EMIS</h5>
             <div class="table-responsive">
                 <table class="table">
                     <thead class="table-secondary">

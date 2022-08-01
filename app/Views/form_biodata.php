@@ -20,13 +20,25 @@ form {
 }
 
 body {
-    background-color: #549b3f;
+    background-color: #ffff;
     ;
+}
+
+.navbar {
+    background-color: #004e15;
+
 }
 </style>
 
 <body>
-    <div class="container">
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://lampung.kemenag.go.id/"><img
+                    src="https://man1balam.sch.id/media_library/posts/post-image-1633590476146.png" alt="LOGO KANWIL"
+                    width="55" height="50"></a>
+        </div>
+    </nav>
+    <div class="container mt-3">
         <center>
             <h1><strong> FORM BIODATA DIRI</strong></h1>
             <h5>KEGIATAN BIMBINGAN TEKNIS EMIS PONDOK PESANTREN</h5>
@@ -44,12 +56,12 @@ body {
             <?php endif; ?>
 
             <form id="form" method="POST" action="<?= base_url('/') ?>">
-                <div class="alert alert-success">
+                <div class="alert alert-secondary">
                     <strong>DATA DIRI</strong>
                 </div>
                 <div class="mb-2 row">
                     <label class="col-sm-5">Nama Lengkap</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <input type="text" name="nama" class="form-control" value="<?= old('nama') ?>"
                             placeholder="Masukkan Nama Lengkap">
                     </div>
@@ -57,31 +69,32 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5">Nomor Induk Pegawai</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <input type="text" name="nip" class="form-control" value="<?= old('nip') ?>"
                             placeholder="Masukkan NIP">
                     </div>
                 </div>
 
                 <div class="mb-2 row">
-                    <label class="col-sm-5">Tempat Lahir</label>
-                    <div class="col-sm-6">
+                    <label class="col-sm-5">TTL</label>
+                    <div class="col-sm-4">
                         <input type="text" name="tmpt_lahir" class="form-control" value="<?= old('tmpt_lahir') ?>"
                             placeholder="Masukkan Tempat Lahir">
                     </div>
-                </div>
-
-                <div class="mb-2 row">
-                    <label class="col-sm-5">Tanggal Lahir</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <input type="date" name="tgl_lahir" class="form-control" value="<?= old('tgl_lahir') ?>"
                             placeholder="Masukkan Tanggal Lahir">
                     </div>
                 </div>
 
+                <!-- <div class="mb-2 row">
+                    <label class="col-sm-5">Tanggal Lahir</label>
+                    
+                </div> -->
+
                 <div class="mb-2 row">
                     <label class="col-sm-5">Tempat Tugas</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <input type="text" name="tempat_tugas" class="form-control" value="<?= old('tempat_tugas') ?>"
                             placeholder="Masukkan Tempat Tugas">
                     </div>
@@ -89,7 +102,7 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5">Jabatan</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <input type="text" name="jabatan" class="form-control" value="<?= old('jabatan') ?>"
                             placeholder="Masukkan Jabatan">
                     </div>
@@ -97,7 +110,7 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5">NPWP</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <input type="text" name="npwp" class="form-control" value="<?= old('npwp') ?>"
                             placeholder="Masukkan NPWP">
                     </div>
@@ -105,7 +118,7 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5">Nama Rekening</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <input type="text" name="nama_rek" class="form-control" value="<?= old('nama_rek') ?>"
                             placeholder="Masukkan Nama Rekening">
                     </div>
@@ -113,7 +126,7 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5">Nomor Rekening</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <input type="text" name="nomor_rek" class="form-control" value="<?= old('nomor_rek') ?>"
                             placeholder="Masukkan Nomor Rekening">
                     </div>
@@ -121,7 +134,7 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5">Nama Bank</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <select class="form-control" name="nama_bank" id="nama_bank">
                             <option>Pilih</option>
                             <option value="Bank Syariah Indonesia">Bank Syariah Indonesia</option>
@@ -134,7 +147,7 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5" for="tempat_tinggal">Tempat Tinggal</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <textarea id="tempat_tinggal" name="tempat_tinggal" class="form-control"
                             value="<?= old('tempat_tinggal') ?>" placeholder="Masukkan Tempat Tinggal"></textarea>
                     </div>
@@ -142,7 +155,7 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5">Kabupaten/Kota</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <select class="form-control" name="kab_kota" id="kab_kota">
                             <option>Pilih</option>
                             <option value="Bandar Lampung">Bandar Lampung</option>
@@ -166,7 +179,7 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5" for="alamat_rumah">Alamat Rumah</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <textarea id="alamat_rumah" name="alamat_rumah" class="form-control"
                             value="<?= old('alamat_rumah') ?>" placeholder="Masukkan Alamat Rumah"></textarea>
                     </div>
@@ -174,7 +187,7 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5" for="alamat_kantor">Alamat Kantor/Lembaga</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <textarea id="alamat_kantor" name="alamat_kantor" class="form-control"
                             value="<?= old('alamat_kantor') ?>" placeholder="Masukkan Alamat Kantor"></textarea>
                     </div>
@@ -182,7 +195,7 @@ body {
 
                 <div class="mb-2 row">
                     <label class="col-sm-5">No. Telp/HP</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <input type="text" name="telp" id="telp" class="form-control" value="<?= old('telp') ?>"
                             placeholder="Masukkan No. Telp/HP">
                     </div>
@@ -197,9 +210,10 @@ body {
                 </div>
 
                 <center>
-                    <button type="submit" name="submit" href="<?= base_url('#') ?>;"
+                    <button type="submit" name="submit" href="<?= base_url('#') ?>"
                         class="btn btn-success">Submit</button>
-                    <button type="cancel" name="cancel" class="btn btn-danger">Cancel</button>
+                    <button type="cancel" name="cancel" href="<?= base_url('/') ?>"
+                        class="btn btn-danger">Cancel</button>
                 </center>
             </form>
 

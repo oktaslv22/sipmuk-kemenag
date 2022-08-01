@@ -11,7 +11,7 @@
 <style>
 .box {
     width: 332px;
-    height: 474px;
+    height: auto;
     background: #549b3f;
     border: 1px solid #000000;
 }
@@ -57,7 +57,7 @@ $user_password = [
                     </h1>
                     <div class="col-md-10 mt-10 offset-xl-1">
                         <?php if (!empty(session()->getFlashdata('error'))) : ?>
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <?php echo session()->getFlashdata('error'); ?>
                         </div>
                         <?php endif; ?>

@@ -47,8 +47,8 @@ class Register extends BaseController
         $users = new M_User();
         $users->insert([
             'user_email' => $this->request->getVar('user_email'),
-            'user_name' => $this->request->getVar('username'),
-            'user_password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
+            'user_name' => $this->request->getVar('user_name'),
+            'user_password' => password_hash($this->request->getVar('user_password'), PASSWORD_BCRYPT),
         ]);
         return redirect()->to('/login');
     }

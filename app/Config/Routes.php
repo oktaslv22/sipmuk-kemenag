@@ -37,15 +37,18 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Login::index');
-$routes->get('/login/process', 'Login::process');
+$routes->post('/login/process', 'Login::process');
 $routes->get('/logout', 'Login::logout');
 $routes->get('/register', 'Register::index');
-$routes->get('/register/process', 'Register::process');
+$routes->post('/register/process', 'Register::process');
 $routes->get('/kontak', 'Home::kontak');
 $routes->get('/dashboard', 'Biodata::index');
 $routes->get('/formbiodata', 'Biodata::create');
 $routes->get('/biodata/store', 'Biodata::store');
 $routes->get('/kegiatan1', 'Home::kegiatan1');
+$routes->get('/kegiatan2', 'Home::kegiatan2');
+$routes->get('/kegiatan3', 'Home::kegiatan3');
+
 
 /*
  * --------------------------------------------------------------------

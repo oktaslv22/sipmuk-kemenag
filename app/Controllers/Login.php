@@ -23,10 +23,10 @@ class Login extends BaseController
             if (password_verify($user_password, $dataUser->user_password)) {
                 session()->set([
                     'user_name' => $dataUser->user_name,
-                    'name' => $dataUser->name,
+                    'user_email' => $dataUser->user_email,
                     'logged_in' => TRUE
                 ]);
-                return redirect()->to(base_url('home'));
+                return redirect()->to(base_url('/'));
             } else {
                 session()->setFlashdata('error', 'Username & Password Salah');
                 return redirect()->back();

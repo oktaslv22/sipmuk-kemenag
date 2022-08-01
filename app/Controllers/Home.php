@@ -23,4 +23,14 @@ class Home extends BaseController
     {
         return view('kegiatan1');
     }
+
+    public function kegiatan2()
+    {
+        return view('kegiatan2');
+    }
+
+    public function kegiatan3()
+    {
+        return view('kegiatan3');
+    }
 }

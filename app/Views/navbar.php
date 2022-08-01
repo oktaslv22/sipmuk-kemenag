@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
-<title>SIPMUK KEMENAG LAMPUNG</title>
-</head>
+
 <style>
 body {
     background-color: #d0ffe0;
@@ -18,9 +18,7 @@ body {
 
 .navbar {
     background-color: #004e15;
-    color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
 
 }
 </style>
@@ -41,7 +39,7 @@ body {
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
                         <a class="nav-link active" style="color: #ffffff;" aria-current="page"
-                            href="<?= site_url('/') ?>"><b>HOME</b></a>
+                            href="<?= base_url('/') ?>"><b>HOME</b></a>
                     </li>
                     <li class=" nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="color: #ffffff;" href="#"
@@ -49,24 +47,25 @@ body {
                             <b>KEGIATAN</b>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="<?= site_url('/kegiatan1') ?>">Pelatihan EMIS</a></li>
-                            <li><a class="dropdown-item" href="#">Workshop Halaqoh</a></li>
-                            <li><a class="dropdown-item" href="#">Sosialisasi BIMTEK</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/kegiatan1') ?>">Pelatihan EMIS</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/kegiatan2') ?>">Workshop Halaqoh</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/kegiatan3') ?>">Sosialisasi BIMTEK</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #ffffff;" href="<?= site_url('/kontak') ?>"><b>KONTAK</b></a>
+                        <a class="nav-link" style="color: #ffffff;" href="<?= base_url('/kontak') ?>"><b>KONTAK</b></a>
                     </li>
                 </ul>
                 <div class="navbar right">
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                         <li class="nav-item">
-                            <a class="nav-link" style="color: #ffffff;" href="<?= site_url('/login') ?>"><span
+                            <a class="nav-link" style="color: #ffffff;" href="<?= base_url('/login') ?>"><span
                                     class="glyphicon glyphicon-log-in"></span><b>LOGIN</b></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="color: #ffffff; float:right;"
-                                href="<?= site_url('/register') ?>"><span
+                                href="<?= base_url('/register') ?>"><span
                                     class="glyphicon glyphicon-user"></span><b>REGISTER</b></a>
                         </li>
                     </ul>
