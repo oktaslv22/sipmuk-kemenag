@@ -2,33 +2,29 @@
 
 namespace App\Controllers;
 
-use App\Models\M_biodata;
+use App\Models\M_biodata3;
 
-class Biodata extends BaseController
+class Biodata3 extends BaseController
 {
-    protected $biodata;
+    protected $biodata3;
 
-    public function dashboard()
-    {
-        return view('dashboard');
-    }
     function __construct()
     {
-        $this->biodata = new M_biodata();
+        $this->biodata3 = new M_biodata3();
     }
 
     public function index()
     {
-        $data['biodata'] = $this->biodata->findAll();
-        return view('v_keg1', $data);
+        $data['biodata3'] = $this->biodata3->findAll();
+        return view('v_keg3', $data);
     }
 
-    public function create()
+    public function create3()
     {
-        return view('form_biodata');
+        return view('form_biodata3');
     }
 
-    public function store()
+    public function store3()
     {
         if (!$this->validate([
             'nama' => [
@@ -126,7 +122,7 @@ class Biodata extends BaseController
             return redirect()->back()->withInput();
         }
 
-        $this->biodata->insert([
+        $this->biodata3->insert([
             'nama' => $this->request->getVar('nama'),
             'nip' => $this->request->getVar('nip'),
             'tmpt_lahir' => $this->request->getVar('tmpt_lahir'),
@@ -145,19 +141,20 @@ class Biodata extends BaseController
 
 
         ]);
+
         session()->setFlashdata('message', 'Pendaftaran Berhasil');
         return redirect()->to('/');
     }
 
     function delete($id)
     {
-        $dataBiodata = $this->biodata->find($id);
+        $dataBiodata = $this->biodata3->find($id);
         if (empty($dataBiodata)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Biodata Tidak ditemukan !');
         }
-        $this->biodata->delete($id);
+        $this->biodata3->delete($id);
         session()->setFlashdata('message', 'Delete Data Berhasil');
-        return redirect()->to('/v_keg1');
+        return redirect()->to('/v_keg3');
     }
 
     function form_after_biodata()

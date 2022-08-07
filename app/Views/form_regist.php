@@ -21,6 +21,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 </style>
+
 <?php
 $user_email = [
     'name' => 'user_email',
@@ -63,12 +64,18 @@ $errors = $session->getFlashdata('errors');
                         <center>REGISTER</center>
                     </h1>
 
-                    <?php if (!empty(session()->getFlashdata('error'))) : ?>
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <h5>Periksa Entrian Form</h5>
-                        <?php echo session()->getFlashdata('error'); ?>
+                    <?php if ($errors != null) : ?>
+                    <div class="alert alert_danger" role="alert">
+                        <h4 class="alert-heading">Terjadi Kesalahan</h4>
+                        <hr>
+                        <p class="mb-0">
+                            <?php foreach ($errors as $err) {
+                                    echo $err . '<br>';
+                                } ?>
+                        </p>
                     </div>
-                    <?php endif; ?>
+                    <?php endif ?>
+
                     <form method="POST" action="<?= base_url('/register/process') ?>">
                         <div class="col-md-10 mt-10 offset-xl-1">
                             <!-- Email input -->
@@ -83,6 +90,13 @@ $errors = $session->getFlashdata('errors');
                                 <label class="form-label" for="user_name">Username</label>
                                 <input type="text" name="user_name" id="user_name" class="form-control"
                                     placeholder="Masukkan Username" />
+                            </div>
+
+                            <!-- Name input -->
+                            <div class="form-outline mb-2">
+                                <label class="form-label" for="name">Name</label>
+                                <input type="text" name="name" id="name" class="form-control"
+                                    placeholder="Masukkan Nama" />
                             </div>
 
                             <!-- Password input -->

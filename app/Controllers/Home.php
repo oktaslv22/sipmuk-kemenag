@@ -33,4 +33,19 @@ class Home extends BaseController
     {
         return view('kegiatan3');
     }
+
+    // public function v_keg1()
+    // {
+    //     return view('v_keg1');
+    // }
+
+    // public function v_keg2()
+    // {
+    //     return view('v_keg2');
+    // }
+
+    // public function v_keg3()
+    // {
+    //     return view('v_keg3');
+    // }
 }

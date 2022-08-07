@@ -1,6 +1,7 @@
 <?php
 include 'navbar.php'
 ?>
+
 <style>
 .featurette-divider {
     margin: 5rem 0;
@@ -22,19 +23,24 @@ include 'navbar.php'
 
 }
 </style>
+
 <div class="container">
     <div class="row d-flex align-items-center justify-content-center h-50">
-        <div class=""><br>
-            <figcaption align="center">
-                <!-- <img src="https://man1balam.sch.id/media_library/posts/post-image-1633590476146.png" class="img-fluid"
+        <br>
+        <figcaption align="center">
+            <!-- <img src="https://man1balam.sch.id/media_library/posts/post-image-1633590476146.png" class="img-fluid"
                     alt="LOGO KANWIL" style="width:192px;height:172px;">
                  -->
-                <br><br>
-                <h4><b>SISTEM INFORMASI PENJAMIN MUTU KEGIATAN</b></h4>
+            <br>
+            <!-- <h1>Hi, <?= session()->get('name'); ?> !</h1> -->
+            <br>
+            <h3 class="lead">Selamat datang di</h3>
+            <h4><b>SISTEM INFORMASI PENJAMIN MUTU KEGIATAN</b></h5>
                 <p>KEMENTERIAN AGAMA PROVINSI LAMPUNG</p><br>
+
                 <hr class="featurette-divider">
-            </figcaption>
-        </div>
+        </figcaption>
+
         <div class="container marketing">
             <center>
                 <!-- Three columns of text below the carousel -->
@@ -48,9 +54,9 @@ include 'navbar.php'
                                 dy=".3em">140x140</text>
                         </svg>
 
-                        <h2 class="fw-normal">Pelatihan EMIS</h2>
+                        <h3 class="fw-normal"><b>Pelatihan EMIS</b></h3>
                         <p>Pengertian kegiatan ........ </p>
-                        <p><a class="btn btn-secondary" href="<?= base_url('/kegiatan1') ?>">Selengkapnya &raquo;</a>
+                        <p><a class="btn btn-success" href="<?= base_url('/kegiatan1') ?>">Detail &raquo;</a>
                         </p>
                     </div><!-- /.col-lg-4 -->
 
@@ -63,9 +69,9 @@ include 'navbar.php'
                                 dy=".3em">140x140</text>
                         </svg>
 
-                        <h2 class="fw-normal">Workshop Halaqoh</h2>
+                        <h3 class="fw-normal"><b>Workshop Halaqoh</b></h3>
                         <p>Pengertian kegiatan ........ </p>
-                        <p><a class="btn btn-secondary" href="<?= base_url('/kegiatan2') ?>">Selengkapnya &raquo;</a>
+                        <p><a class="btn btn-success" href="<?= base_url('/kegiatan2') ?>">Detail &raquo;</a>
                         </p>
                     </div><!-- /.col-lg-4 -->
 
@@ -78,9 +84,9 @@ include 'navbar.php'
                                 dy=".3em">140x140</text>
                         </svg>
 
-                        <h2 class="fw-normal">Sosialisasi BIMTEK</h2>
+                        <h3 class="fw-normal"><b>Sosialisasi BIMTEK</b></h3>
                         <p>Pengertian kegiatan ........ </p>
-                        <p><a class="btn btn-secondary" href="<?= base_url('/kegiatan3') ?>">Selengkapnya &raquo;</a>
+                        <p><a class="btn btn-success" href="<?= base_url('/kegiatan3') ?>">Detail &raquo;</a>
                         </p>
                     </div><!-- /.col-lg-4 -->
             </center>

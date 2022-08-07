@@ -22,6 +22,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 </style>
+
 <?php
 $user_name = [
     'name' => 'user_name',
@@ -61,7 +62,7 @@ $user_password = [
                             <?php echo session()->getFlashdata('error'); ?>
                         </div>
                         <?php endif; ?>
-                        <form method="post" action="<?= base_url('/login/process'); ?>">
+                        <form method="post" action="<?= base_url('/login/process') ?>">
                             <!-- Username input -->
                             <div class="form-outline mb-2">
                                 <label class="form-label" for="user_name">Username</label>

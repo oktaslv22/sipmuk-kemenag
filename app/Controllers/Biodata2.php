@@ -2,33 +2,29 @@
 
 namespace App\Controllers;
 
-use App\Models\M_biodata;
+use App\Models\M_biodata2;
 
-class Biodata extends BaseController
+class Biodata2 extends BaseController
 {
-    protected $biodata;
+    protected $biodata2;
 
-    public function dashboard()
-    {
-        return view('dashboard');
-    }
     function __construct()
     {
-        $this->biodata = new M_biodata();
+        $this->biodata2 = new M_biodata2();
     }
 
     public function index()
     {
-        $data['biodata'] = $this->biodata->findAll();
-        return view('v_keg1', $data);
+        $data['biodata2'] = $this->biodata2->findAll();
+        return view('v_keg2', $data);
     }
 
-    public function create()
+    public function create2()
     {
-        return view('form_biodata');
+        return view('form_biodata2');
     }
 
-    public function store()
+    public function store2()
     {
         if (!$this->validate([
             'nama' => [
@@ -126,7 +122,7 @@ class Biodata extends BaseController
             return redirect()->back()->withInput();
         }
 
-        $this->biodata->insert([
+        $this->biodata2->insert([
             'nama' => $this->request->getVar('nama'),
             'nip' => $this->request->getVar('nip'),
             'tmpt_lahir' => $this->request->getVar('tmpt_lahir'),
@@ -151,13 +147,13 @@ class Biodata extends BaseController
 
     function delete($id)
     {
-        $dataBiodata = $this->biodata->find($id);
+        $dataBiodata = $this->biodata2->find($id);
         if (empty($dataBiodata)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Biodata Tidak ditemukan !');
         }
-        $this->biodata->delete($id);
+        $this->biodata2->delete($id);
         session()->setFlashdata('message', 'Delete Data Berhasil');
-        return redirect()->to('/v_keg1');
+        return redirect()->to('/v_keg3');
     }
 
     function form_after_biodata()

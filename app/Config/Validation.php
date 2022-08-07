@@ -7,6 +7,7 @@ use CodeIgniter\Validation\CreditCardRules;
 use CodeIgniter\Validation\FileRules;
 use CodeIgniter\Validation\FormatRules;
 use CodeIgniter\Validation\Rules;
+use Myth\Auth\Authentication\Passwords\ValidationRules;
 
 class Validation extends BaseConfig
 {
@@ -25,6 +26,7 @@ class Validation extends BaseConfig
         FormatRules::class,
         FileRules::class,
         CreditCardRules::class,
+        ValidationRules::class,
     ];
 
     /**
@@ -43,39 +45,51 @@ class Validation extends BaseConfig
     //--------------------------------------------------------------------
     public $register = [
         'user_email' => [
-            'rules' => 'required',
+            'rules' => 'required|min_length[10]|is_unique[users.user_email]',
         ],
         'user_name' => [
+            'rules' => 'required|min_length[4]',
+        ],
+        'name' => [
             'rules' => 'required',
         ],
         'user_password' => [
-            'rules' => 'required |min_length[8]',
+            'rules' => 'required|min_length[8]',
+        ],
+    ];
+
+    public $register_errors = [
+        'user_email' => [
+            'required' => '{field} Harus diisi',
+            'min_length' => '{field} Minimal 10 Karakter',
+            'is_unique' => 'Email sudah digunakan sebelumnya'
+        ],
+        'user_name' => [
+            'required' => '{field} Harus diisi',
+            'min_length' => '{field} Minimal 4 Karakter',
+        ],
+        'name' => [
+            'required' => '{field} Harus diisi',
+        ],
+        'user_password' => [
+            'required' => '{field} Harus diisi',
+            'min_length' => '{field} Minimal 8 Karakter',
+        ],
+    ];
+
+    public $login = [
+        'user_name' => [
+            'rules' => 'required|min_length[4]',
+        ],
+        'user_password' => [
+            'rules' => 'required|min_length[8]',
         ],
     ];
 
     public $login_errors = [
-        'user_email' => [
-            'required' => '{field} Harus Di Isi!',
-        ],
         'user_name' => [
             'required' => '{field} Harus Di Isi!',
-        ],
-        'user_password' => [
-            'required' => '{field} Harus Di Isi!',
-            'min_length' => '{field} Minimal 8 karakter'
-        ],
-    ];
-    public $login = [
-        'user_name' => [
-            'rules' => 'required',
-        ],
-        'user_password' => [
-            'rules' => 'required |min_length[8]',
-        ],
-    ];
-    public $register_errors = [
-        'user_name' => [
-            'required' => '{field} Harus Di Isi!',
+            'min_length' => '{field} Minimal 4 karakter'
         ],
         'user_password' => [
             'required' => '{field} Harus Di Isi!',

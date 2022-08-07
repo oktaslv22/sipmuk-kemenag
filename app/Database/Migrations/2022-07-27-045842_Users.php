@@ -17,11 +17,15 @@ class Users extends Migration
                 'type'           => 'VARCHAR',
                 'constraint'     => '100',
             ],
+            'name'       => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '100',
+            ],
             'user_password'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '100',
             ],
-            'created_at'       => [
+            'created_by'       => [
                 'type'           => 'DATETIME',
                 'null'     => true,
             ],

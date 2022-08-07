@@ -2,18 +2,6 @@
 include 'navbar.php'
 ?>
 
-<style>
-/* body {
-    background-color: #d0ffe0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-}
-
-.box {
-    margin-left: 200px;
-    width: 400px;
-} */
-</style>
-
 <body>
 
     </header>
@@ -21,11 +9,21 @@ include 'navbar.php'
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center mt-5">
-                <h2 class="section-heading text-uppercase"><b> INFORMASI KONTAK</b></h2><br><br><br><br><br><br>
+                <h2 class="section-heading text-uppercase"><b>TENTANG SIPMUK</b></h2><br><br>
                 <!-- <h3 class="section-subheading text-muted">KANWIL KEMENAG PROV. LAMPUNG</h3> -->
             </div>
             <div class="row text-center">
-                <div class="col-md-4">
+                <p>
+                    Aplikasi SIPMUK adalah Aplikasi Penjaminan Mutu Kegiatan berisikan Sistem Informasi yang mengelola
+                    kegiatan-kegiatan mencakup Pendaftaran Online.
+                    <!-- sistem Member, Upload Dokumen Peserta, Upload Dokumen
+                    Nara Sumber, Upload Foto Kegiatan, Messenger dan Forum antar Member, Pencetakan Form Peserta
+                    Otomatis, Kritik dan Saran dan Pelaporan.  -->
+                    Aplikasi ini sangat membantu pihak pelaksana kegiatan
+                    terutama dokumentasi kegiatan yang sering terabaikan. Terlebih memberikan kemudahan dalam pelaporan
+                    Kegiatan, juga bagi peserta dalam proses administrasi dan lainnya. Semoga Bermanfaat! <br><br>
+                </p>
+                <!-- <div class="col-md-4">
                     <a class="fa-stack fa-3x" href="https://wa.me/081271468135">
                         <i class="fa fa-circle fa-stack-2x text-dark"></i>
                         <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
@@ -50,26 +48,10 @@ include 'navbar.php'
                     </a>
                     <h4 class="my-3">Website</h4>
                     <p class="text-muted">https://lampung.kemenag.go.id/</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
-    <!-- <div class="box mt-5">
-        <h3 class="mb-5"> <b>INFORMASI KONTAK</b></h3>
-        <i class="fa fa-map-marker mb-2 "> Jalan Cut Mutia No. 27, Kel. Gulak Galik, Teluk Betung Utara -
-            Bandar
-            Lampung 35212</i><br>
-        <i class="fa fa-phone mb-2"> 08316812536728</i><br>
-        <i class="fa fa-envelope mb-2"> kanwillampung@kemenag.co.id</i><br>
-        <i class="fa fa-globe mb-2"><a href="https://lampung.kemenag.go.id/">
-                https://lampung.kemenag.go.id/</a>
-        </i>
-    </div> -->
-
-
 </body>
-
-
-
 
 </html>

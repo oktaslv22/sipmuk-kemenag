@@ -36,18 +36,30 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/login', 'Login::index');
+$routes->get('/login', 'Auth::login');
 $routes->post('/login/process', 'Login::process');
-$routes->get('/logout', 'Login::logout');
-$routes->get('/register', 'Register::index');
-$routes->post('/register/process', 'Register::process');
+$routes->get('/logout', 'Auth::logout');
+$routes->get('/register', 'Auth::register');
+$routes->post('/register/process', 'Auth::register');
 $routes->get('/kontak', 'Home::kontak');
-$routes->get('/dashboard', 'Biodata::index');
 $routes->get('/formbiodata', 'Biodata::create');
-$routes->get('/biodata/store', 'Biodata::store');
+$routes->get('/formbiodata2', 'Biodata2::create2');
+$routes->get('/formbiodata3', 'Biodata3::create3');
+$routes->post('/biodata/store', 'Biodata::store');
+$routes->post('/biodata/store2', 'Biodata2::store2');
+$routes->post('/biodata/store3', 'Biodata3::store3');
+$routes->get('/biodata/export', 'Biodata::export');
+$routes->get('/biodata/delete/(:num)', 'Biodata::delete/$1');
+$routes->get('/biodata2/delete/(:num)', 'Biodata2::delete/$1');
+$routes->get('/biodata3/delete/(:num)', 'Biodata3::delete/$1');
+$routes->get('/invoice_biodata', 'Biodata::form_after_biodata');
 $routes->get('/kegiatan1', 'Home::kegiatan1');
 $routes->get('/kegiatan2', 'Home::kegiatan2');
 $routes->get('/kegiatan3', 'Home::kegiatan3');
+$routes->get('/dashboard', 'Biodata::dashboard');
+$routes->get('/v_keg1', 'Biodata::index');
+$routes->get('/v_keg2', 'Biodata2::index');
+$routes->get('/v_keg3', 'Biodata3::index');
 
 
 /*

@@ -9,8 +9,8 @@ class M_User extends Model
     protected $table = "users";
     protected $primaryKey = "user_name";
     protected $returnType = "object";
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $allowedFields = [
-        'user_email', 'user_name', 'user_password', 'created_at', 'updated_at'
+        'user_email', 'user_name', 'name', 'user_password', 'created_by', 'updated_at'
     ];
 }

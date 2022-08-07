@@ -41,7 +41,7 @@ body {
     <div class="container mt-3">
         <center>
             <h1><strong> FORM BIODATA DIRI</strong></h1>
-            <h5>KEGIATAN PELATIHAN EMIS</h5>
+            <h5>KEGIATAN WORKSHOP HALAQOH</h5>
         </center>
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('error'))) : ?>

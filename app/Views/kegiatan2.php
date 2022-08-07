@@ -12,7 +12,7 @@ include 'navbar.php'
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">WORKSHOP HALAQOH</h1>
+                        <h3 class="fw-bolder mb-1">WORKSHOP HALAQOH</h3>
                         <!-- Post categories-->
                         <a class="badge bg-secondary text-decoration-none link-light" href="#!">PAPKI</a>
                         <a class="badge bg-secondary text-decoration-none link-light" href="#!">Kemenag Prov.
@@ -31,6 +31,8 @@ include 'navbar.php'
                             are everywhere, so there's no reason to think that Earth would be unique in that regard.
                             Whether of not the life became intelligent is a different question, and we'll see if we find
                             that.</p>
+                        <p class="fs-5 mb-4">Untuk mendaftar di kegiatan ini silahkan klik <a
+                                href="/formbiodata2">disini</a></p>
                     </section>
                 </article>
                 <!-- Comments section-->
