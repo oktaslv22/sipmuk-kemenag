@@ -54,9 +54,9 @@ $errors = $session->getFlashdata('errors');
                         <img src="https://man1balam.sch.id/media_library/posts/post-image-1633590476146.png"
                             class="img-fluid" alt="LOGO KANWIL" style="width:299px;height:268px;">
 
-                        <h1><b>SIPMUK</b></h1>
-                        <h4>SISTEM INFORMASI PENJAMIN MUTU KEGIATAN</h4>
-                        <h6>KEMENTERIAN AGAMA PROVINSI LAMPUNG</h6>
+                        <!-- <h1><b>SIPMUK</b></h1> -->
+                        <h4>SISTEM INFORMASI KEGIATAN</h4>
+                        <h6>KANWIL KEMENTERIAN AGAMA PROVINSI LAMPUNG</h6>
                     </figcaption>
                 </div>
                 <div class="box">
@@ -81,7 +81,7 @@ $errors = $session->getFlashdata('errors');
                             <!-- Email input -->
                             <div class="form-outline mb-2">
                                 <label class="form-label" for="user_email">Email</label>
-                                <input type="text" name="user_email" id="user_email" class="form-control"
+                                <input type="email" name="user_email" id="user_email" class="form-control"
                                     placeholder="Masukkan Email" />
                             </div>
 

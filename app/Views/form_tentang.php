@@ -3,18 +3,15 @@ include 'navbar.php'
 ?>
 
 <body>
-
-    </header>
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center mt-5">
-                <h2 class="section-heading text-uppercase"><b>TENTANG SIPMUK</b></h2><br><br>
-                <!-- <h3 class="section-subheading text-muted">KANWIL KEMENAG PROV. LAMPUNG</h3> -->
+                <h2 class="section-heading text-uppercase"><b>TENTANG SISTEM</b></h2><br><br>
             </div>
             <div class="row text-center">
                 <p>
-                    Aplikasi SIPMUK adalah Aplikasi Penjaminan Mutu Kegiatan berisikan Sistem Informasi yang mengelola
+                    Aplikasi ini adalah Aplikasi Kegiatan berisikan Sistem Informasi yang mengelola
                     kegiatan-kegiatan mencakup Pendaftaran Online.
                     <!-- sistem Member, Upload Dokumen Peserta, Upload Dokumen
                     Nara Sumber, Upload Foto Kegiatan, Messenger dan Forum antar Member, Pencetakan Form Peserta

@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\M_dashboard;
+
 class Home extends BaseController
 {
     public function index()
@@ -9,9 +11,9 @@ class Home extends BaseController
         return view('home');
     }
 
-    public function kontak()
+    public function tentang()
     {
-        return view('form_kontak');
+        return view('form_tentang');
     }
 
     public function print()

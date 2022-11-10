@@ -47,9 +47,10 @@ $user_password = [
                         <img src="https://man1balam.sch.id/media_library/posts/post-image-1633590476146.png"
                             class="img-fluid" alt="LOGO KANWIL" style="width:299px;height:268px;">
 
-                        <h1><b>SIPMUK</b></h1>
-                        <h4>SISTEM INFORMASI PENJAMIN MUTU KEGIATAN</h4>
-                        <h6>KEMENTERIAN AGAMA PROVINSI LAMPUNG</h6>
+                        <!-- <h1><b>SIPMUK</b></h1> -->
+                        <br>
+                        <h4>SISTEM INFORMASI KEGIATAN</h4>
+                        <h6>KANWIL KEMENTERIAN AGAMA PROVINSI LAMPUNG</h6>
                     </figcaption>
                 </div>
                 <div class="box">
@@ -78,11 +79,12 @@ $user_password = [
                             </div>
 
                             <div class="d-flex justify-content-around align-items-center mb-4">
-                                <!-- Checkbox -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-                                    <label class="form-check-label" for="form1Example3"> Remember me </label>
-                                </div>
+
+                                <!-- <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="login_admin" value='1'
+                                        id="form1Example3" />
+                                    <label class="form-check-label" for="form1Example3"> Login Admin </label>
+                                </div> -->
                                 <button type="submit" name="login" class="btn btn-success">Login</button>
                             </div>
 

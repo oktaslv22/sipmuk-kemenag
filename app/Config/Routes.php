@@ -36,31 +36,42 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/login', 'Auth::login');
+$routes->get('/login', 'Login::index');
 $routes->post('/login/process', 'Login::process');
-$routes->get('/logout', 'Auth::logout');
-$routes->get('/register', 'Auth::register');
-$routes->post('/register/process', 'Auth::register');
-$routes->get('/kontak', 'Home::kontak');
-$routes->get('/formbiodata', 'Biodata::create');
-$routes->get('/formbiodata2', 'Biodata2::create2');
-$routes->get('/formbiodata3', 'Biodata3::create3');
+$routes->get('/logout', 'Login::logout');
+$routes->get('/register', 'Register::index');
+$routes->post('/register/process', 'Register::process');
+$routes->get('/tentang', 'Home::tentang');
+$routes->group('formbiodata', ['filter' => 'formfilter'], function ($routes) {
+    $routes->get('/', 'Biodata::create');
+});
+$routes->group('formbiodata2', ['filter' => 'formfilter'], function ($routes) {
+    $routes->get('/', 'Biodata2::create2');
+});
+$routes->group('formbiodata3', ['filter' => 'formfilter'], function ($routes) {
+    $routes->get('/', 'Biodata3::create3');
+});
 $routes->post('/biodata/store', 'Biodata::store');
 $routes->post('/biodata/store2', 'Biodata2::store2');
 $routes->post('/biodata/store3', 'Biodata3::store3');
-$routes->get('/biodata/export', 'Biodata::export');
-$routes->get('/biodata/delete/(:num)', 'Biodata::delete/$1');
-$routes->get('/biodata2/delete/(:num)', 'Biodata2::delete/$1');
-$routes->get('/biodata3/delete/(:num)', 'Biodata3::delete/$1');
 $routes->get('/invoice_biodata', 'Biodata::form_after_biodata');
 $routes->get('/kegiatan1', 'Home::kegiatan1');
 $routes->get('/kegiatan2', 'Home::kegiatan2');
 $routes->get('/kegiatan3', 'Home::kegiatan3');
-$routes->get('/dashboard', 'Biodata::dashboard');
-$routes->get('/v_keg1', 'Biodata::index');
-$routes->get('/v_keg2', 'Biodata2::index');
-$routes->get('/v_keg3', 'Biodata3::index');
-
+$routes->group('admin', ['filter' => 'adminfilter'], function ($routes) {
+    $routes->get('/', 'Dashboard::index');
+    $routes->get('dashboard', 'Dashboard::index');
+    $routes->get('view_keg1', 'Biodata::index');
+    $routes->get('view_keg2', 'Biodata2::index');
+    $routes->get('view_keg3', 'Biodata3::index');
+    $routes->get('export1', 'Biodata::export');
+    $routes->get('export2', 'Biodata2::export');
+    $routes->get('export3', 'Biodata3::export');
+    $routes->get('biodata/delete/(:num)', 'Biodata::delete/$1');
+    $routes->get('biodata2/delete/(:num)', 'Biodata2::delete/$1');
+    $routes->get('biodata3/delete/(:num)', 'Biodata3::delete/$1');
+});
+$routes->get('verifikasi_akun/(:segment)', 'Register::verifikasi/$1');
 
 /*
  * --------------------------------------------------------------------

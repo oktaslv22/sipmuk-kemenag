@@ -12,103 +12,66 @@ include 'navbar.php'
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h3 class="fw-bolder mb-1">SOSIALISASI BIMTEK</h3>
+                        <h3 class="fw-bolder mb-1">SOSIALISASI BANTUAN OPERASIONAL PONTREN</h3>
                         <!-- Post categories-->
                         <a class="badge bg-secondary text-decoration-none link-light" href="#!">PAPKI</a>
                         <a class="badge bg-secondary text-decoration-none link-light" href="#!">Kemenag Prov.
                             Lampung</a>
                     </header>
                     <!-- Preview image figure-->
-                    <figure class="mb-4"><img class="img-fluid rounded"
-                            src="https://3.bp.blogspot.com/-LGpMS_snwro/W5crYlpEjgI/AAAAAAAAByg/5ZLaavSL9i0OAP9jKYm9s1o2sO9aXXmxACLcBGAs/s1600/foto%2Bkeren%2Bcowok%2Bsiluet%2Bsedang%2Bmengambil%2Bmatahari.jpg"
-                            alt="..." /></figure>
+                    <figure class="mb-4"><img class="img-fluid rounded" src="<?= base_url('img/keg3.jpg'); ?> "
+                            alt=" ..." height="90" width="300" /></figure>
                     <!-- Post content-->
                     <section class="mb-5">
-                        <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the
-                            free human mind. Because it transforms who we are, how we live, and it gives us an
-                            understanding of our place in the universe.</p>
-                        <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it
-                            are everywhere, so there's no reason to think that Earth would be unique in that regard.
-                            Whether of not the life became intelligent is a different question, and we'll see if we find
-                            that.</p>
-                        <p class="fs-5 mb-4">Untuk mendaftar di kegiatan ini silahkan klik <a
-                                href="/formbiodata3">disini</a></p>
+                        <p class="fs-5 mb-4">Program Bantuan Operasional Pondok Pesantren (BOP) adalah upaya pemerintah
+                            untuk memberikan perhatian dalam memenuhi kebutuhan operasional pada proses pembelajaran di
+                            Pondok Pesantren.</p>
+                        <!-- <p class="fs-5 mb-4">Bimtek BOP ini digelar sebagai pedoman dan pengelolaan BOP dalam rangka
+                            meningkatkan layanan kepada masyarakat guna terwujudnya pengelolaan anggaran operasional
+                            yang tepat sasaran sesuai dengan kebutuhan.</p> -->
+
+                        <p class="fs-5 mb-4">Kegiatan Program BOP harus dihadiri oleh Kepala atau Pimpinan dari
+                            Pondok Pesantren
+                            seluruh kabupaten/kota se-provinsi Lampung yang akan dilaksanakan selama 1 hari pada:
+                            <br><b>
+                                Hari/Tanggal : 13 Januari 2023<br>
+                                Jam Registrasi
+                                : 09.30 WIB<br> Jam Kegiatan
+                                : 10.00 WIB<br> Tempat : Aula Pepadun Kemenag Provinsi Lampung</b></p>
+                        <p class="fs-5 mb-4">Beberapa hal yang perlu diperhatikan peserta kegiatan adalah sebagai
+                            berikut: <br> 1. &ensp; Wajib membawa surat tugas asli dari instansi yang ditandangani
+                            pimpinan instansi dan dibubuhi stempel. <br> 2. &ensp; Mengisi formulir biodata peserta <br>
+                            3. &ensp; Mematuhi dan menerapkan protokol
+                            kesehatan
+                            masa pandeimi Covid-19 yang berlaku dengan
+                            melaksanakan , physical distancing menggunakan masker dan atau kelengkapan lainnya.
+                        </p>
+                        <!-- <p class="fs-5 mb-4">Untuk mendaftar di kegiatan ini silahkan klik <a
+                                href="/formbiodata3">disini</a></p> -->
                     </section>
                 </article>
-                <!-- Comments section-->
-                <!-- <section class="mb-5">
-                    <div class="card bg-light">
-                        <div class="card-body"> -->
-                <!-- Comment form-->
-                <!-- <form class="mb-4"><textarea class="form-control" rows="3"
-                                    placeholder="Join the discussion and leave a comment!"></textarea></form> -->
-                <!-- Comment with nested comments-->
-                <!-- <div class="d-flex mb-4"> -->
-                <!-- Parent comment-->
-                <!-- <div class="flex-shrink-0"><img class="rounded-circle"
-                                        src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                <div class="ms-3">
-                                    <div class="fw-bold">Commenter Name</div>
-                                    If you're going to lead a space frontier, it has to be government; it'll never be
-                                    private enterprise. Because the space frontier is dangerous, and it's expensive, and
-                                    it has unquantified risks. -->
-                <!-- Child comment 1-->
-                <!-- <div class="d-flex mt-4">
-                                        <div class="flex-shrink-0"><img class="rounded-circle"
-                                                src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                        <div class="ms-3">
-                                            <div class="fw-bold">Commenter Name</div>
-                                            And under those conditions, you cannot establish a capital-market evaluation
-                                            of that enterprise. You can't get investors.
-                                        </div>
-                                    </div> -->
-                <!-- Child comment 2-->
-                <!-- <div class="d-flex mt-4">
-                                        <div class="flex-shrink-0"><img class="rounded-circle"
-                                                src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                        <div class="ms-3">
-                                            <div class="fw-bold">Commenter Name</div>
-                                            When you put money directly to a problem, it makes a good headline.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-
-                <!-- </div> -->
-                <!-- </div>
-                </section> -->
             </div>
             <!-- Side widgets-->
             <div class="col-lg-4">
 
                 <!-- Categories widget-->
                 <div class="card mb-4">
+                    <div class="card-header text-light" style="background: #004e15">Formulir Biodata Peserta</div>
+                    <div class="card-body"><a href="/formbiodata3">klik disini</a></div>
+                </div>
+                <div class="card mb-4">
                     <div class="card-header text-light" style="background: #004e15">Kategori</div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-6">
                                 <ul class="list-unstyled mb-0">
-                                    <li><a href="#!">Materi</a></li>
-                                    <li><a href="#!">Petunjuk Pelaksana</a></li>
+                                    <!-- <li><a href="#!">Materi</a></li>
+                                    <li><a href="#!">Petunjuk Pelaksana</a></li> -->
                                     <li><a href="#!">Petunjuk Teknis</a></li>
                                 </ul>
                             </div>
-                            <!-- <div class="col-sm-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="#!">Persyaratan</a></li>
-                                    <li><a href="#!">#</a></li>
-                                    <li><a href="#!">#</a></li>
-                                </ul>
-                            </div> -->
                         </div>
                     </div>
-                </div>
-                <!-- Side widget-->
-                <div class="card mb-4">
-                    <div class="card-header text-light" style="background: #004e15">Notes</div>
-                    <div class="card-body">*Kegiatan ini harus diikuti oleh semua operator kemenag kabupaten atau kota
-                        se-Provinsi Lampung</div>
-                    <a class="card-body" href="/formbiodata">DAFTAR DISINI</a>
                 </div>
             </div>
         </div>

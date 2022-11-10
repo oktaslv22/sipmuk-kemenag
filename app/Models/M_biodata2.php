@@ -12,4 +12,11 @@ class M_biodata2 extends Model
     protected $allowedFields = [
         'nama', 'nip', 'tmpt_lahir', 'tgl_lahir', 'tempat_tugas', 'jabatan', 'npwp', 'nama_rek', 'nomor_rek', 'nama_bank', 'tempat_tinggal', 'kab_kota', 'alamat_rumah', 'alamat_kantor', 'telp'
     ];
+    public function search($keyword)
+    {
+        $builder = $this->table('biodata2');
+        $builder->like('nama', $keyword);
+        $builder->like('nip', $keyword);
+        return $builder;
+    }
 }

@@ -3,15 +3,14 @@
 namespace App\Controllers;
 
 use App\Models\M_biodata;
+use App\Models\M_dashboard;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Biodata extends BaseController
 {
     protected $biodata;
 
-    public function dashboard()
-    {
-        return view('dashboard');
-    }
     function __construct()
     {
         $this->biodata = new M_biodata();
@@ -19,7 +18,23 @@ class Biodata extends BaseController
 
     public function index()
     {
-        $data['biodata'] = $this->biodata->findAll();
+        $model_dasboard = new M_dashboard();
+        $currentPage =  $this->request->getVar('page_biodata') ? $this->request->getVar('page_biodata') : 1;
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $biodata = $this->M_biodata->search($keyword);
+        } else {
+            $biodata = $this->biodata;
+        }
+
+        // $data['biodata'] = $this->biodata->findAll();
+        $data['biodata'] = $biodata->paginate(10, 'biodata');
+        $data['pager'] = $this->biodata->pager;
+        $data['currentPage'] = $currentPage;
+        $data['total_1'] = $model_dasboard->total_1();
+        $data['total_2'] = $model_dasboard->total_2();
+        $data['total_3'] = $model_dasboard->total_3();
+
         return view('v_keg1', $data);
     }
 
@@ -38,9 +53,10 @@ class Biodata extends BaseController
                 ]
             ],
             'nip' => [
-                'rules' => 'required',
+                'rules' => 'required|numeric',
                 'errors' => [
-                    'required' => '{field} Harus diisi'
+                    'required' => '{field} Harus diisi',
+                    'numeric' => '{field} Harus diisi angka'
                 ]
             ],
             'tmpt_lahir' => [
@@ -67,42 +83,6 @@ class Biodata extends BaseController
                     'required' => '{field} Harus diisi'
                 ]
             ],
-            'npwp' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-            'nama_rek' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-            'nomor_rek' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-            'nama_bank' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-            'tempat_tinggal' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-            'kab_kota' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
             'alamat_rumah' => [
                 'rules' => 'required',
                 'errors' => [
@@ -116,9 +96,10 @@ class Biodata extends BaseController
                 ]
             ],
             'telp' => [
-                'rules' => 'required',
+                'rules' => 'required|numeric',
                 'errors' => [
-                    'required' => '{field} Harus diisi'
+                    'required' => '{field} Harus diisi',
+                    'numeric' => '{field} Harus diisi angka'
                 ]
             ],
         ])) {
@@ -133,12 +114,6 @@ class Biodata extends BaseController
             'tgl_lahir' => $this->request->getVar('tgl_lahir'),
             'tempat_tugas' => $this->request->getVar('tempat_tugas'),
             'jabatan' => $this->request->getVar('jabatan'),
-            'npwp' => $this->request->getVar('npwp'),
-            'nama_rek' => $this->request->getVar('nama_rek'),
-            'nomor_rek' => $this->request->getVar('nomor_rek'),
-            'nama_bank' => $this->request->getVar('nama_bank'),
-            'tempat_tinggal' => $this->request->getVar('tempat_tinggal'),
-            'kab_kota' => $this->request->getVar('kab_kota'),
             'alamat_rumah' => $this->request->getVar('alamat_rumah'),
             'alamat_kantor' => $this->request->getVar('alamat_kantor'),
             'telp' => $this->request->getVar('telp')
@@ -157,7 +132,12 @@ class Biodata extends BaseController
         }
         $this->biodata->delete($id);
         session()->setFlashdata('message', 'Delete Data Berhasil');
-        return redirect()->to('/v_keg1');
+        return redirect()->to('admin/view_keg1');
+    }
+
+    function detail()
+    {
+        return json_encode($this->biodata - find($id));
     }
 
     function form_after_biodata()
@@ -167,9 +147,67 @@ class Biodata extends BaseController
 
     public function export()
     {
-        $data = [
-            'biodata' => $this->model->getAllData()
+        $biodata = $this->biodata->findAll();
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'No');
+        $sheet->setCellValue('B1', 'Nama');
+        $sheet->setCellValue('C1', 'NIP');
+        $sheet->setCellValue('D1', 'Tempat Lahir');
+        $sheet->setCellValue('E1', 'Tanggal Lahir');
+        $sheet->setCellValue('F1', 'Tempat Tugas');
+        $sheet->setCellValue('G1', 'Jabatan');
+        $sheet->setCellValue('H1', 'Alamat Rumah');
+        $sheet->setCellValue('I1', 'Alamat Kantor');
+        $sheet->setCellValue('J1', 'Nomor Telepon');
+
+        $column = 2; //start column
+        foreach ($biodata as $key => $value) {
+            $sheet->setCellValue('A' . $column, ($column - 1));
+            $sheet->setCellValue('B' . $column, $value->nama);
+            $sheet->setCellValue('C' . $column, $value->nip);
+            $sheet->setCellValue('D' . $column, $value->tmpt_lahir);
+            $sheet->setCellValue('E' . $column, $value->tgl_lahir);
+            $sheet->setCellValue('F' . $column, $value->tempat_tugas);
+            $sheet->setCellValue('G' . $column, $value->jabatan);
+            $sheet->setCellValue('H' . $column, $value->alamat_rumah);
+            $sheet->setCellValue('I' . $column, $value->alamat_kantor);
+            $sheet->setCellValue('J' . $column, $value->telp);
+            $column++;
+        }
+        $sheet->getStyle('A1:J1')->getFont()->setBold(true);
+        $sheet->getStyle('A1:J1')->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FFFFFF00');
+        $styleArray = [
+            'borders' => [
+                'allBorders' => [
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                    'color' => ['argb' => 'FF000000'],
+
+                ],
+            ],
         ];
-        echo view('excel', $data);
+        $sheet->getStyle('A1:J' . ($column - 1))->applyFromArray($styleArray);
+
+        $sheet->getColumnDimension('A')->setAutoSize(true);
+        $sheet->getColumnDimension('B')->setAutoSize(true);
+        $sheet->getColumnDimension('C')->setAutoSize(true);
+        $sheet->getColumnDimension('D')->setAutoSize(true);
+        $sheet->getColumnDimension('E')->setAutoSize(true);
+        $sheet->getColumnDimension('F')->setAutoSize(true);
+        $sheet->getColumnDimension('G')->setAutoSize(true);
+        $sheet->getColumnDimension('H')->setAutoSize(true);
+        $sheet->getColumnDimension('I')->setAutoSize(true);
+        $sheet->getColumnDimension('J')->setAutoSize(true);
+
+
+        $writer = new Xlsx($spreadsheet);
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename=PelatihanEMIS.xlsx');
+        header('Cache-Control: max-age=0');
+        $writer->save('php://output');
+        exit();
     }
 }

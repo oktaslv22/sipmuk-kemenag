@@ -15,12 +15,12 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="sb-admin-2.min.css" rel="stylesheet">
-    <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="<?= base_url('sb-admin-2.min.css') ?> " rel="stylesheet">
+    <link href="<?= base_url('docs/5.2/dist/css/bootstrap.min.css'); ?> " rel="stylesheet">
 
 </head>
 <style>
@@ -53,7 +53,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/dashboard">
+                <a class="nav-link" href="/admin">
                     <i class="fa fa-tachometer"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -68,14 +68,14 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item" style="margin-top:2px;">
-                <a class="nav-link " href="<?= base_url('/v_keg1') ?> ">
+                <a class="nav-link " href="<?= base_url('admin/view_keg1') ?> ">
                     <span>Pelatihan EMIS</span>
                 </a>
-                <a class="nav-link" href="<?= base_url('/v_keg2') ?> ">
+                <a class="nav-link" href="<?= base_url('admin/view_keg2') ?> ">
                     <span>Workshop Halaqoh</span>
                 </a>
-                <a class="nav-link" href="<?= base_url('/v_keg3') ?> ">
-                    <span>Sosialisasi BIMTEK</span>
+                <a class="nav-link" href="<?= base_url('admin/view_keg3') ?> ">
+                    <span>Sosialisasi BOP</span>
                 </a>
 
             </li>
@@ -97,17 +97,17 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
+                    <form action="" method="post"
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
+                        <!-- <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
+                                name="keyword" aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-success" type="button">
+                                <button class="btn btn-success" type="submit">
                                     <i class="fa fa-search fa-sm"></i>
                                 </button>
                             </div>
-                        </div>
+                        </div> -->
                     </form>
 
                     <!-- Topbar Navbar -->
@@ -148,14 +148,14 @@
                     <div class="row">
 
                         <!-- Pelatihan EMIS Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        <div class="col mr-2 ml-2">
+                                            <div class="text-sm font-weight-bold text-primary text-uppercase mb-1">
                                                 Pelatihan EMIS</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_1; ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-users fa-2x text-gray-300"></i>
@@ -166,14 +166,14 @@
                         </div>
 
                         <!-- Workshop Halaqoh Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        <div class="col mr-2 ml-2">
+                                            <div class="text-sm font-weight-bold text-success text-uppercase mb-1 ">
                                                 Workshop Halaqoh</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_2; ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-users fa-2x text-gray-300"></i>
@@ -182,15 +182,15 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Sosialisasi BIMTEK Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <!-- Sosialisasi BOP Card Example -->
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Sosialisasi BIMTEK</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                        <div class="col mr-2 ml-2">
+                                            <div class="text-sm font-weight-bold text-warning text-uppercase mb-1">
+                                                Sosialisasi BOP</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_3; ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-users fa-2x text-gray-300"></i>
@@ -202,3 +202,9 @@
 
                     </div>
                 </div>
+                <!-- SCRIPT JAVASCRIPT -->
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+                <script>
+                </script>

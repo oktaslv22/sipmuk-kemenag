@@ -39,30 +39,7 @@ class Biodata extends Migration
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
             ],
-            'npwp'       => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '255',
-            ],
-            'nama_rek'       => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '255',
-            ],
-            'nomor_rek'       => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '255',
-            ],
-            'nama_bank'       => [
-                'type'           => 'ENUM',
-                'constraint'     => "'Bank Syariah Indonesia','Bank Negara Indonesia','Bank Republik Indonesia','Bank Mandiri'",
-            ],
-            'tempat_tinggal'       => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '255',
-            ],
-            'kab_kota'       => [
-                'type'           => 'ENUM',
-                'constraint'     => "'Bandar Lampung','Lampung Selatan','Lampung Timur','Lampung Tengah','Lampung Barat','Lampung Utara','Mesuji','Pesawaran','Pringsewu','Way Kanan','Metro','Tanggamus','Tulang Bawang Barat','Tulang Bawang','Pesisir Barat'"
-            ],
+
             'alamat_rumah'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
